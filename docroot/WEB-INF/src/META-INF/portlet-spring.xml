@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.ssavr.solr.service.IceCreamLocalService" class="com.ssavr.solr.service.impl.IceCreamLocalServiceImpl" />
+	<bean id="com.ssavr.solr.service.IceCreamLocalServiceUtil" class="com.ssavr.solr.service.IceCreamLocalServiceUtil">
+		<property name="service" ref="com.ssavr.solr.service.IceCreamLocalService" />
+	</bean>
+	<bean id="com.ssavr.solr.service.IceCreamService" class="com.ssavr.solr.service.impl.IceCreamServiceImpl" />
+	<bean id="com.ssavr.solr.service.IceCreamServiceUtil" class="com.ssavr.solr.service.IceCreamServiceUtil">
+		<property name="service" ref="com.ssavr.solr.service.IceCreamService" />
+	</bean>
+	<bean id="com.ssavr.solr.service.persistence.IceCreamPersistence" class="com.ssavr.solr.service.persistence.IceCreamPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ssavr.solr.service.IceCreamDocumentsLocalService" class="com.ssavr.solr.service.impl.IceCreamDocumentsLocalServiceImpl" />
+	<bean id="com.ssavr.solr.service.IceCreamDocumentsLocalServiceUtil" class="com.ssavr.solr.service.IceCreamDocumentsLocalServiceUtil">
+		<property name="service" ref="com.ssavr.solr.service.IceCreamDocumentsLocalService" />
+	</bean>
+	<bean id="com.ssavr.solr.service.IceCreamDocumentsService" class="com.ssavr.solr.service.impl.IceCreamDocumentsServiceImpl" />
+	<bean id="com.ssavr.solr.service.IceCreamDocumentsServiceUtil" class="com.ssavr.solr.service.IceCreamDocumentsServiceUtil">
+		<property name="service" ref="com.ssavr.solr.service.IceCreamDocumentsService" />
+	</bean>
+	<bean id="com.ssavr.solr.service.persistence.IceCreamDocumentsPersistence" class="com.ssavr.solr.service.persistence.IceCreamDocumentsPersistenceImpl" parent="basePersistence" />
+</beans>

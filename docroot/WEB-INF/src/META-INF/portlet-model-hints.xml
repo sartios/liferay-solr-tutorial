@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ssavr.solr.model.IceCream">
+		<field name="uuid" type="String" />
+		<field name="iceCreamId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="flavor" type="String" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.ssavr.solr.model.IceCreamDocuments">
+		<field name="uuid" type="String" />
+		<field name="iceCreamDocumentsId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="documentId" type="long" />
+		<field name="iceCreamId" type="long" />
+	</model>
+</model-hints>

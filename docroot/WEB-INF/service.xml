@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+<service-builder package-path="com.ssavr.solr">
+	<author>SAVRAMIS</author>
+	<namespace>solr</namespace>
+
+	<entity name="IceCream" local-service="true" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="iceCreamId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="flavor" type="String" />
+		<column name="name" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="iceCreamId" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Flavor" return-type="Collection">
+			<finder-column name="flavor" />
+		</finder>
+		
+		<finder name="Name" return-type="IceCream">
+			<finder-column name="name" />
+		</finder>
+		
+		<reference entity="DLFileEntry" package-path="com.liferay.portlet.documentlibrary"></reference>
+	</entity>
+	
+	<entity name="IceCreamDocuments" local-service="true" uuid="true">
+		
+		<!-- PK fields -->
+		
+		<column name="iceCreamDocumentsId" type="long" primary="true"></column>
+		
+		<!-- Audit fields -->
+		
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="documentId" type="long" />
+		<column name="iceCreamId" type="long" />
+		
+		<!-- Finder methods -->
+		
+		<finder return-type="Collection" name="IceCreamId">
+			<finder-column name="iceCreamId"></finder-column>
+		</finder>
+		
+		<reference entity="DLFileEntry" package-path="com.liferay.portlet.documentlibrary"></reference>
+	</entity>
+</service-builder>

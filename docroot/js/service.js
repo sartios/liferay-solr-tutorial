@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.solr", "com.ssavr.solr.service", "liferay-solr-tutorial-portlet");
